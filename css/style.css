@@ -217,3 +217,70 @@ section {
 .service-card__link:hover {
     color: var(--color-brand-hover);
 }
+/* ============================================
+   СЕКЦИЯ О КЛИНИКЕ (ABOUT)
+   ============================================ */
+.about {
+    background-color: var(--color-bg-card); /* Белый фон для контраста с кремовым */
+}
+
+.about__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки одинаковой ширины */
+    gap: 64px;
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.about__text p {
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.about__list {
+    list-style: none; /* Убираем стандартные маркеры */
+    margin-top: 32px;
+}
+
+.about__list li {
+    font-size: 18px;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+    padding-left: 32px;
+    position: relative; /* Для позиционирования кастомной иконки */
+}
+
+/* Кастомная галочка вместо стандартного маркера */
+.about__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-brand); /* Наш шалфейный акцент */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.about__image-wrapper {
+    border-radius: 24px;
+    overflow: hidden; /* Скрываем углы картинки за скруглением */
+    box-shadow: 0 20px 40px rgba(31, 42, 36, 0.08); /* Более выраженная тень для фото */
+}
+
+.about__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинка заполняет контейнер, не искажаясь */
+    display: block;
+}
+
+/* Адаптивность: на планшетах и телефонах — одна колонка */
+@media (max-width: 992px) {
+    .about__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .about__image-wrapper {
+        order: -1; /* Картинка встает над текстом на мобильных */
+    }
+}
