@@ -350,3 +350,58 @@ section {
         grid-template-columns: 1fr; /* Карточки в один столбец */
     }
 }
+/* ============================================
+   СЕКЦИЯ ВРАЧИ (DOCTORS)
+   ============================================ */
+.doctors__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 48px;
+}
+
+.doctor-card {
+    text-align: center;
+}
+
+.doctor-card__image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Пропорции портрета */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(31, 42, 36, 0.08);
+    transition: transform var(--transition);
+}
+
+.doctor-card:hover .doctor-card__image-wrapper {
+    transform: translateY(-8px);
+}
+
+.doctor-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.doctor-card:hover .doctor-card__image {
+    transform: scale(1.05);
+}
+
+.doctor-card__name {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.doctor-card__specialty {
+    font-size: 16px;
+    color: var(--color-brand);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.doctor-card__experience {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
