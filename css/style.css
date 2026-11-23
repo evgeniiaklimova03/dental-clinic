@@ -284,3 +284,69 @@ section {
         order: -1; /* Картинка встает над текстом на мобильных */
     }
 }
+/* ============================================
+   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ (МЕДИА-ЗАПРОСЫ)
+   ============================================ */
+
+/* --- Планшеты и небольшие экраны (до 992px) --- */
+@media (max-width: 992px) {
+    .header__nav {
+        display: none; /* Прячем горизонтальное меню (позже сделаем бургер) */
+    }
+
+    .hero__title {
+        font-size: 40px; /* Уменьшаем заголовок */
+    }
+
+    .hero__subtitle {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+}
+
+/* --- Телефоны (до 768px) --- */
+@media (max-width: 768px) {
+    section {
+        padding: 48px 0; /* Меньше отступов по вертикали */
+    }
+
+    .header {
+        padding: 16px 0;
+    }
+
+    .header__logo {
+        font-size: 20px;
+    }
+
+    .header .btn--primary {
+        padding: 12px 20px; /* Кнопка в шапке поменьше */
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 64px 0;
+    }
+
+    .hero__title {
+        font-size: 32px; /* Еще меньше на телефоне */
+        margin-bottom: 16px;
+    }
+
+    .hero__subtitle {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .btn {
+        padding: 14px 24px;
+        font-size: 15px;
+        width: 100%; /* Кнопки на мобильном на всю ширину (удобно нажимать) */
+    }
+    
+    .services__grid {
+        grid-template-columns: 1fr; /* Карточки в один столбец */
+    }
+}
