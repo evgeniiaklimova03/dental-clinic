@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Запись на консультацию — Стоматология "Белая Гавань"</title>
-    <meta name="description" content="Запишитесь на консультацию в стоматологическую клинику «Белая Гавань». Оставьте заявку, и мы перезвоним вам.">
+    <meta name="description" content="Запишитесь на консультацию в премиальную стоматологию &quot;Белая Гавань&quot; в Москве. Быстрая запись, внимательные врачи.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Запись на консультацию — Стоматология &quot;Белая Гавань&quot;">
+    <meta property="og:description" content="Запишитесь на консультацию в премиальную стоматологию &quot;Белая Гавань&quot; в Москве. Быстрая запись, внимательные врачи.">
+    <meta property="og:image" content="https://dental-clinic-mvvb.netlify.app/images/clinic.jpg">
+    <meta property="og:url" content="https://dental-clinic-mvvb.netlify.app/booking.html">
+    <meta property="og:type" content="website">
 
     <!-- Подключение шрифтов Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +35,11 @@
                 <a href="index.html" class="header__link">Контакты</a>
             </nav>
             <a href="booking.html" class="btn btn--primary">Записаться</a>
+            <button class="header__burger" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -40,6 +52,7 @@
                     <p class="booking__subtitle">Оставьте заявку, и мы перезвоним вам в ближайшее время.</p>
 
                     <form class="booking-form" action="https://formspree.io/f/meagpwge" method="POST">
+                        <input type="hidden" name="_next" value="https://dental-clinic-mvvb.netlify.app/thanks.html">
                         <div class="booking-form__row">
                             <div class="booking-form__group">
                                 <label class="booking-form__label" for="name">Ваше имя</label>
@@ -79,6 +92,9 @@
             <p>&copy; 2024 Стоматология "Белая Гавань". Все права защищены.</p>
         </div>
     </footer>
+
+    <!-- Подключение JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

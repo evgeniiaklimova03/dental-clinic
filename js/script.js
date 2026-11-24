@@ -44,3 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('touchend', () => { isDragging = false; });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Бургер-меню
+    const burger = document.querySelector('.header__burger');
+    const nav = document.querySelector('.header__nav');
+
+    if (burger && nav) {
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('is-open');
+            burger.classList.toggle('is-active');
+            const isExpanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', String(!isExpanded));
+        });
+
+        // Закрываем меню при клике на ссылку
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('is-open');
+                burger.classList.remove('is-active');
+                burger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+});
