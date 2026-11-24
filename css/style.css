@@ -405,3 +405,117 @@ section {
     font-size: 14px;
     color: var(--color-text-secondary);
 }
+/* ============================================
+   СЕКЦИЯ КЕЙСЫ (CASES) — СЛАЙДЕР
+   ============================================ */
+.cases {
+    padding: 80px 0;
+}
+
+.cases__subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 18px;
+    margin-bottom: 48px;
+    margin-top: -24px; /* Приближаем к заголовку */
+}
+
+.case-slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9; /* Пропорции как у видео */
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(31, 42, 36, 0.1);
+    user-select: none; /* Запрещаем выделение текста при перетаскивании */
+}
+
+.case-slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Картинки не должны перехватывать клики */
+}
+
+/* Контейнер "До" — обрезается по ширине */
+.case-slider__before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Начальная позиция: половина */
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.case-slider__before .case-slider__img {
+    width: 200%; /* Картинка внутри должна быть в 2 раза шире контейнера */
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Линия-разделитель и круглый ползунок */
+.case-slider__handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Начальная позиция */
+    width: 4px;
+    transform: translateX(-50%);
+    z-index: 3;
+    cursor: ew-resize; /* Курсор "влево-вправо" */
+}
+
+.case-slider__line {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.case-slider__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: var(--color-text-primary);
+    font-size: 20px;
+    font-weight: bold;
+}
+/* --- Дополнения для слайдера кейсов --- */
+.cases__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.case-slider {
+    touch-action: pan-y; /* вертикальный скролл работает, горизонтальный — для слайдера */
+}
+
+.case-slider__img--after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.case-slider__caption {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 18px;
+    color: var(--color-text-secondary);
+}
